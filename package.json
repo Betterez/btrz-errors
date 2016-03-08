@@ -25,7 +25,6 @@
   },
   "homepage": "https://github.com/Betterez/btrz-errors#readme",
   "dependencies": {
-    "lodash": "^4.6.1",
     "make-error-cause": "^1.1.0"
   },
   "devDependencies": {
