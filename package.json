@@ -1,6 +1,6 @@
 {
   "name": "btrz-errors",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Custom Errors for Betterez APIs",
   "main": "index.js",
   "scripts": {
