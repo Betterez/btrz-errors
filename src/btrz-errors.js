@@ -1,16 +1,40 @@
 "use strict";
 
 let maker = require("make-error-cause"),
-  _ = require("lodash");
+  KnownErrors = require("./known-errors").KnownErrors;
 
 function pascalCase(code) {
-  return _.upperFirst(_.camelCase(code))
+  return code
+    .split("_")
+    .map((p) => { return p.toLowerCase(); })
+    .map((p) => { return `${p[0].toUpperCase()}${p.slice(1)}`; })
+    .join("");
+}
+
+function isString(value) {
+  return value && value.toLowerCase;
+}
+
+function isError(value) {
+  return value && value.stack;
 }
 
 class BtrzErrors {
-  static create(code) {
-    let BtrzError = maker(pascalCase(code));
-    return new BtrzError(code, new Error("dsdsd"));
+  static create(codeOrError, causeOrMessage, message) {
+    if (isError(codeOrError)) {
+      return KnownErrors.create(codeOrError)
+    }
+
+    if (!isString(codeOrError)) {
+      throw new Error("codeOrError is mandatory");
+    }
+
+    let BtrzError = maker(pascalCase(codeOrError));
+    if (causeOrMessage && isString(causeOrMessage)) {
+      return new BtrzError(causeOrMessage);
+    } else {
+      return new BtrzError(message, causeOrMessage);
+    }
   }
 }
 
