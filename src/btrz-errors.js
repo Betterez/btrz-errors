@@ -1,7 +1,6 @@
 "use strict";
 
-let maker = require("make-error-cause"),
-  KnownErrors = require("./known-errors").KnownErrors;
+let maker = require("make-error-cause");
 
 function pascalCase(code) {
   return code
@@ -15,15 +14,8 @@ function isString(value) {
   return value && value.toLowerCase;
 }
 
-function isError(value) {
-  return value && value.stack;
-}
-
 class BtrzErrors {
   static create(codeOrError, causeOrMessage, message) {
-    if (isError(codeOrError)) {
-      return KnownErrors.create(codeOrError)
-    }
 
     if (!isString(codeOrError)) {
       throw new Error("codeOrError is mandatory");

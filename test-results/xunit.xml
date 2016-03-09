@@ -1,12 +1,10 @@
-<testsuite name="Mocha Tests" tests="10" failures="0" errors="0" skipped="0" timestamp="Tue, 08 Mar 2016 21:25:46 GMT" time="0.019">
-<testcase classname="BtrzErrors #create (known errors)" name="should return a DuplicateKey error" time="0.005"/>
-<testcase classname="BtrzErrors #create (known errors)" name="should return an unknown error" time="0.001"/>
+<testsuite name="Mocha Tests" tests="8" failures="0" errors="0" skipped="0" timestamp="Wed, 09 Mar 2016 13:43:45 GMT" time="0.014">
 <testcase classname="BtrzErrors #create (adhoc errord)" name="should return a custom error of the given type" time="0.001"/>
 <testcase classname="BtrzErrors #create (adhoc errord)" name="should return a custom error with the cause" time="0"/>
-<testcase classname="BtrzErrors #create (adhoc errord)" name="should have no message" time="0"/>
+<testcase classname="BtrzErrors #create (adhoc errord)" name="should have no message" time="0.001"/>
 <testcase classname="BtrzErrors #create (adhoc errord)" name="should have the given message" time="0"/>
 <testcase classname="BtrzErrors #create (adhoc errord)" name="should have the given message" time="0"/>
-<testcase classname="BtrzErrors #create (adhoc errord)" name="should throw if no codeOrError is given" time="0.001"/>
-<testcase classname="BtrzErrors #create (adhoc errord)" name="should throw if codeOrError is not a string" time="0.001"/>
+<testcase classname="BtrzErrors #create (adhoc errord)" name="should throw if no codeOrError is given" time="0.002"/>
+<testcase classname="BtrzErrors #create (adhoc errord)" name="should throw if codeOrError is not a string" time="0"/>
 <testcase classname="BtrzErrors #create (adhoc errord)" name="should create an error without cause but with a message" time="0"/>
 </testsuite>

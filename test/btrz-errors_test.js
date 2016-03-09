@@ -4,23 +4,7 @@ describe("BtrzErrors", function () {
 
   let expect = require("chai").expect,
     BtrzErrors =  require("../index").BtrzErrors;
-
-  describe("#create (known errors)", function () {
-
-    it("should return a DuplicateKey error", function () {
-      let duplicateError = new Error("... E11000 duplicate key error index ..."),
-        error = BtrzErrors.create(duplicateError);
-      expect(error.name).to.be.eql("DuplicatedIndex");
-    });
-
-    it("should return an unknown error", function () {
-      let nonDuplicated = new Error("some error"),
-        error = BtrzErrors.create(nonDuplicated);
-
-      expect(error).to.be.undefined;
-    });
-  });
-
+    
   describe("#create (adhoc errord)", function () {
 
     it("should return a custom error of the given type", function () {
