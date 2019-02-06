@@ -19,5 +19,5 @@ It wraps the `make-error-cause` library and offers some conventions on top of it
     let complete = BtrzErrors.create("COMPLETE", err, "message");
     // will return an error of type "Complete"
     // .message === "message"
-    // .name == "Complete"
+    // .name === "Complete"
     // .cause === err
